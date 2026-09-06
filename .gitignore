@@ -1,0 +1,29 @@
+# --- Rhino ---
+*.3dmbak
+*.3dm.bak
+*_bak*.3dm
+*.3dm~
+*.rui.bak
+
+# Rhino auto-backup files often saved next to the working file
+~$*.3dm
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Local backup output (matches CreateBackup.py's default target) ---
+RhinoBackups/

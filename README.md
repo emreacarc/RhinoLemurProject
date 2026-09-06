@@ -27,7 +27,8 @@ RhinoLemur/
 │   ├── Slot.py                  Evenly spaced slot holes along an edge
 │   └── Xline.py                 Infinite construction lines (H/V/2-point)
 └── selection-tools/
-    └── SelectObjectsSameColor.py   Selects everything matching a color
+    ├── SelectObjectsSameColor.py   Selects everything matching a color
+    └── SelectSimilarAdvanced.py    Selects objects matching multiple criteria at once (type, layer, block name, color, name, size, volume)
 ```
 
 ## Installation / Usage
@@ -49,6 +50,7 @@ If you use a particular tool often, it's worth aliasing it to a Rhino command or
 - `BlockVolumeCalc.py` accounts for each block instance's own scale/rotation when computing volume — two instances of the same block placed at different scales will report correctly, not just multiplied by count.
 - `BlockNameWriter.py` remembers your last-used text height, font, and placement setting between runs (via `sc.sticky`), and won't stack duplicate labels if you re-run it on the same blocks.
 - `CreateBackup.py` defaults to `I:\RhinoBackups` — change `default_dir` near the top of the script if that path doesn't apply to your setup.
+- `SelectSimilarAdvanced.py` remembers your last-used matching criteria (type, layer, block name, color, name, dimensions, volume) between runs, and automatically drops a criterion if none of the reference objects actually have that property (e.g. unchecking "Volume" mid-run if none of your references are closed solids). Its color matching uses the same `DrawColor()` fix as `SelectObjectsSameColor.py`, so ByLayer-colored objects match correctly.
 
 ## License
 
